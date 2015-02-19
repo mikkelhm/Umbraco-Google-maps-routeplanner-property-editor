@@ -57,9 +57,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\RoutePlanner\package.manifest" />
+    <Content Include="App_Plugins\RoutePlanner\propertyeditors\routeplanner.css.map" />
+    <Content Include="App_Plugins\RoutePlanner\propertyeditors\routeplanner.scss" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\RoutePlanner\external\routeplanner-external.js" />
+    <Content Include="App_Plugins\RoutePlanner\propertyeditors\routeplanner.css" />
+    <Content Include="App_Plugins\RoutePlanner\propertyeditors\routeplanner.html" />
+    <Content Include="App_Plugins\RoutePlanner\propertyeditors\routeplanner.js" />
+    <Content Include="App_Plugins\RoutePlanner\propertyeditors\routeplanner.min.css" />
+    <Content Include="App_Plugins\RoutePlanner\propertyeditors\u-circle.png" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
