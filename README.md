@@ -24,14 +24,29 @@ Prevalues enabled in the fieldtype is:
 * pointMarkerSize
 * strokeColor
 
+##Rendering the map
 The package contains of the property editor parts, but also a render part. The MVC HtmlHelper has been extended, and the following two methods are avalible:
 ```
 @Html.GetRouteHtml()
 ```
-This will just render a div on the place of you page where you need it. You can specify an id, which will be used for the javascript part, to render the map in the div. It is highly recommended to set a height of the div, or take care of in your css. The code will always render a style="height:xxxpx", so in css, you need to specify the !important attribute to override.
+This will just render a div on the place of you page where you need it. You can specify an id, which will be used for the javascript part, to render the map in the div. It is highly recommended to set a height of the div, or take care of in your css. The code will always render a `style="height:xxxpx"`, so in css, you need to specify the `!important` attribute to override.
 
 The second helper method is 
 ```
 @Html.GetRouteJs()
 ```
 This method allows you to set all the settings will render a javascript object that contains them. It also allows to add the javascript as a part of the ClientDependencyFramework, by using the useCDF property, which is true as default. It is worth mentioning that you need to use the `@Html.RenderJsHere() ` in order to get the map working. If you set the useCDF to false, it will simply render the javascript where you put the `@Html.GetRouteJs()`.
+
+A Simple partialview that renderes the map could look like this:
+
+```
+@using RoutePlanner
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Running.cshtml";
+}
+@Html.GetRouteHtml(Umbraco.AssignedContentItem, "route")
+@Html.GetRouteJs(Umbraco.AssignedContentItem, "route",strokeColor:"#ff0000", strokeWeight:10, strokeOpacity:"0.5")
+```
+![alt text](https://github.com/mikkelhm/Umbraco-Google-maps-routeplanner-property-editor/blob/master/markdown/frontend.png "Screenshot from a simple frontend")
+_above is a screenshot from the frontend, a very simple one of its kind_
