@@ -50,3 +50,7 @@ A Simple partialview that renderes the map could look like this:
 ```
 ![alt text](https://github.com/mikkelhm/Umbraco-Google-maps-routeplanner-property-editor/blob/master/markdown/frontend.png "Screenshot from a simple frontend")
 _above is a screenshot from the frontend, a very simple one of its kind_
+
+For all the frontend work, you shuold remember to reference the RoutePlanner.dll in your code, or it wont work.
+
+The editor is testet in Umbraco 7.2.1, but ***SHOULD*** work in all that supports the new Angular UI(Belle, 7.0+))
