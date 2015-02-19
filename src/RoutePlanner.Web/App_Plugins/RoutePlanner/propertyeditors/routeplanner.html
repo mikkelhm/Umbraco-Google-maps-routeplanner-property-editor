@@ -1,0 +1,30 @@
+﻿<div ng-controller="routeplanner" class="routeplanner">
+    <div id="{{model.alias}}_map" class="map" ng-class="{'mapactive':drawing}"></div>
+    <div class="buttons">
+        <div class="btn" ng-click="startDraw()" ng-show="!drawing">
+            <span class="icon-people-alt-2"></span>&nbsp;&nbsp;Start route
+        </div>
+        <div class="btn" ng-click="endDraw()" ng-show="drawing">
+            <span class="icon-people-alt-2"></span>&nbsp;&nbsp;End route
+        </div>
+        <div class="btn" ng-click="deleteLast()">
+            <span class="icon-delete-key"></span>&nbsp;&nbsp;Delete last
+        </div>
+        <div class="btn" ng-click="deleteAll()">
+            <span class="icon-delete"></span>&nbsp;&nbsp;Delete all
+        </div>
+        <span style="float:right;">Distance: {{markerModel.distance | number:2}} meters</span>
+    </div>
+    <div ng-show="showDebug">
+        <h3>Debug</h3>
+        <div>Initial lat: <span ng-bind="model.config.initialLat"></span></div>
+        <div>Initial lng: <span ng-bind="model.config.initialLng"></span></div>
+        <div>Initial zoom: <span ng-bind="model.config.initialZoom"></span></div>
+        <h4>Model</h4>
+        <div>{{model | json}}</div>
+        <h4>Marker model latLngs</h4>
+        <div>{{markerModel.latLngs | json}}</div>
+        <h4>Marker model points</h4>
+        <div>{{markerModel.points | json}}</div>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+﻿{
+    "propertyEditors": [
+        {
+            "alias": "run.routeplanner",
+            "name": "Route planner",
+            "editor": {
+                "view": "~/app_plugins/routeplanner/propertyeditors/routeplanner.html",
+                "valueType": "JSON",
+                "hideLabel": true
+            },
+            "prevalues": {
+                "fields": [
+                    {
+                        "label": "Google maps API key",
+                        "description": "You need a google maps key in order to get the map working properly in Umbraco backend",
+                        "key": "apiKey",
+                        "view": "textString",
+                        "validation": [ { "type": "Required" } ]
+                    },
+                    {
+                        "label": "Start coordinates lat",
+                        "description": "Enter the start coordinates lattitude of the planner",
+                        "key": "initialLat",
+                        "view": "textstring",
+                        "validation": [
+                            { "type": "Required" }
+                        ]
+                    },
+                    {
+                        "label": "Start coordinates lng",
+                        "description": "Enter the start coordinates longtitude of the planner",
+                        "key": "initialLng",
+                        "view": "textstring",
+                        "validation": [
+                            { "type": "Required" }
+                        ]
+                    },
+                    {
+                        "label": "Start zoom",
+                        "description": "Initial zoom of the map",
+                        "key": "initialZoom",
+                        "view": "number",
+                        "validation": [
+                            { "type": "Required" }
+                        ]
+                    },
+                    {
+                        "label": "Show debug information",
+                        "description": "Should debug information be shown? this will show a section containing the json in the bottom of the property",
+                        "key": "showDebug",
+                        "view": "boolean"
+                    },
+                    {
+                        "label": "Point marker in backoffice",
+                        "description": "When drawing the route in the backoffice, each point is marked by a marker, default is an umbraco u",
+                        "key": "pointMarker",
+                        "view": "imagepicker"
+                    },
+                    {
+                        "label": "Point marker size(px width)",
+                        "description": "The size of the point marker, remember to scale along with the point image",
+                        "key": "pointMarkerSize",
+                        "view": "number"
+                    },
+                    {
+                        "label": "Route color",
+                        "description": "The color of the route in the backoffice",
+                        "key": "strokeColor",
+                        "view": "textstring"
+                    }
+                ]
+            }
+        }
+    ],
+    "javascript": [
+        "~/app_plugins/routeplanner/propertyeditors/routeplanner.js"
+    ],
+    "css": [
+        "~/app_plugins/routeplanner/propertyeditors/routeplanner.css"
+    ]
+
+}
