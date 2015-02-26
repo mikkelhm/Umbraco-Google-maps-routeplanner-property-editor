@@ -30,12 +30,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClientDependency.Core, Version=1.7.1.2, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Archetype, Version=1.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\MikkelhmMulti.Web.UI\bin\ClientDependency.Core.dll</HintPath>
+      <HintPath>..\Externals\Archetype\Archetype.dll</HintPath>
     </Reference>
-    <Reference Include="ClientDependency.Core.Mvc">
-      <HintPath>..\MikkelhmMulti.Web.UI\Bin\ClientDependency.Core.Mvc.dll</HintPath>
+    <Reference Include="ClientDependency.Core, Version=1.8.2.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Umbraco\ClientDependency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core.Mvc, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Umbraco\ClientDependency.Core.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -43,17 +48,26 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Umbraco\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="umbraco">
-      <HintPath>..\MikkelhmMulti.Web.UI\Bin\umbraco.dll</HintPath>
+    <Reference Include="umbraco, Version=1.0.5529.18525, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Umbraco\umbraco.dll</HintPath>
     </Reference>
-    <Reference Include="Umbraco.Core">
-      <HintPath>..\MikkelhmMulti.Web.UI\Bin\Umbraco.Core.dll</HintPath>
+    <Reference Include="Umbraco.Core, Version=1.0.5529.18522, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Umbraco\Umbraco.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="umbraco.DataLayer, Version=1.0.5529.18523, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Externals\Umbraco\umbraco.DataLayer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
