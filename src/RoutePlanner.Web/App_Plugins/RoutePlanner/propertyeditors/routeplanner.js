@@ -66,8 +66,7 @@
                 if ($scope.model.value != "" && !$scope.markerModel.isKMLimported) {
                    
                     $scope.convertToGoogleMapsObjects();
-                    console.log($scope.markerModel.points);
-                    //console.log($scope.markerModel.latLngs);
+           
                 }
                 if ($scope.model.value.center == null) {
                     $scope.markerModel.center = new google.maps.LatLng($scope.model.config.initialLat, $scope.model.config.initialLng);
@@ -75,7 +74,7 @@
                 if ($scope.model.value.center != null) {
                     $scope.markerModel.center = new google.maps.LatLng($scope.model.value.center.k, $scope.model.value.center.B);
                 }
-
+               
                 var mapOptions = {
                     zoom: $scope.markerModel.zoom,
                     center: $scope.markerModel.center
@@ -115,7 +114,7 @@
             // needed to convert the saved json to actual google.maps.LatLng objects, which google maps can utilize
             $scope.convertToGoogleMapsObjects = function () {
                 for (var i = 0; i < $scope.model.value.latLngs.length; i++) {
-                    $scope.markerModel.latLngs.push({ latLng: new google.maps.LatLng($scope.model.value.latLngs[i].latLng.k, $scope.model.value.latLngs[i].latLng.B) });
+                    $scope.markerModel.latLngs.push( new google.maps.LatLng($scope.model.value.latLngs[i].k, $scope.model.value.latLngs[i].B));
                 }
                 for (var i = 0; i < $scope.model.value.points.length; i++) {
                     var mark = $scope.model.value.points[i].mark;
@@ -206,7 +205,7 @@
                     marker.setMap($scope.map);
                     $scope.markerModel.initialMarker = marker;
                     if (addToModel) {
-                        $scope.markerModel.latLngs.push({ latLng: latLng });
+                        $scope.markerModel.latLngs.push( latLng );
                         $scope.markerModel.points.push({
                             mark: latLng,
                             latLngs: [latLng]
@@ -247,7 +246,7 @@
                                 var route = result.routes[0];
                                 if (addToModel) {
                                     for (var i = 0; i < route.overview_path.length; i++) {
-                                        $scope.markerModel.latLngs.push({ latLng: route.overview_path[i] });
+                                        $scope.markerModel.latLngs.push( route.overview_path[i] );
                                     }
                                     $scope.markerModel.points.push({
                                         mark: latLng,
@@ -270,8 +269,9 @@
             }
 
             $scope.distanceChanged = function () {
-                var latLngArray = $scope.markerModel.latLngs.map(function (x) { return x.latLng; });
-                $scope.markerModel.distance = google.maps.geometry.spherical.computeLength(latLngArray);
+                CalculateDistance();
+                // var latLngArray = $scope.markerModel.latLngs.map(function (x) { return x.latLng; });
+               // $scope.markerModel.distance = google.maps.geometry.spherical.computeLength(latLngArray);
             }
 
             $scope.mapClicked = function (event) {
@@ -368,9 +368,10 @@
                         var distanceBetweenPoints = CalculateDistanceBetweenPoints($scope.markerModel.latLngs[i - 1], $scope.markerModel.latLngs[i]);
                         distance = distance + distanceBetweenPoints;
                     }
+                 
                 }
-
                 $scope.markerModel.distance = distance.toFixed(2);
+               
 
             }
             function CalculateDistanceBetweenPoints(a, b) {
