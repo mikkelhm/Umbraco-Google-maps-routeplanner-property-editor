@@ -1,0 +1,27 @@
+
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : 27. februar 2015 09:22:19
+   Source : c:\Repositories\Routeplanner-property-editor\src\RoutePlanner\bin\
+     Dest : c:\Repositories\Routeplanner-property-editor\src\RoutePlanner\App_Data\NuGetBackup\20150227-092219\bin\
+
+    Files : *.*
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	                   0	c:\Repositories\Routeplanner-property-editor\src\RoutePlanner\bin\
+	  New Dir          0	c:\Repositories\Routeplanner-property-editor\src\RoutePlanner\bin\Debug\
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :         2         1         0         0         0         0
+   Files :         0         0         0         0         0         0
+   Bytes :         0         0         0         0         0         0
+   Times :   0:00:00   0:00:00                       0:00:00   0:00:00
+   Ended : 27. februar 2015 09:22:19
+
